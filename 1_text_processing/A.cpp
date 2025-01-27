@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 
-const int limit = 100;
+const int limit = 10;
 
 void scan(char *array, int size) {
 	fgets(array, size, stdin);
@@ -21,6 +21,7 @@ void shiftLeftMemmove(char *array, int size, int start, int shift) {
 		return;
 	if(start + shift > size-1)
 		shift = size-1-start;
+	//       array+start    array + start + shift -> pointer notation, below array notation
 	memmove(&array[start], &array[start + shift], strlen(array) - start);
 }
 
