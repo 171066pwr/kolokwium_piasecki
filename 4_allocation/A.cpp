@@ -49,4 +49,5 @@ int main () {
 	
 	printIntArray(A, aSize);
 	printIntArray(B, bSize);
+	delete A, delete B;
 }

@@ -1,3 +1,5 @@
+fgets( array ptr , int size, stdin); -> read string until newline with limit. "stdin" is just literal name of the input stream.
+
 strcmp( array + index, "cokolwiek") == 0	-> string compare!
 strcpy( destination, source ) - string copy, ranges might overlap
 memmove ( destination, source, size (bytes)) - memory copy, ranges might overlap

@@ -1,8 +1,8 @@
-/* b)	Napisz funkcje tworz¹c¹ dynamiczn¹ tablice struktur
-    opisuj¹cych dane osobowe studentów (wczeœniej zdefinuj typ tej struktury).
-    Wielkoœæ tej dynamicznie tworzonej tablicy
-    powinna byæ zadawana przez u¿ytkownika (z klawiatury).
-    Nastêpnie napisz funkcjê wczytuj¹c¹ z klawiatury dane do w/w tablicy.
+/*  c)	Napisz funkcjê tworz¹c¹ dynamiczn¹ tablicê wskaŸników na teksty
+    o maksymalnej dlugoœci 30 znaków.
+    Wielkoœæ tablicy powinna byæ zadawana przez u¿ytkownika (z klawiatury).
+    Nastêpnie napisz funkcjê wczytuj¹c¹ kolejne teksty z klawiatury
+    i umieszczaj¹c¹ je w tej dynamicznie utworzonej tablicy. 
 */
 #include <stdlib.h>
 #include <stdio.h>
@@ -39,7 +39,7 @@ Student *readStudent() {
 	std::cout << "Indeks: ";
 	std::cin >> indeks;
 	//yes, you still need to flush endline before using fgets, sad.
-	cin.clear();
+	std::cin.clear();
 	fflush(stdin);
 	
 	std::cout << "Imie: ";
@@ -50,14 +50,13 @@ Student *readStudent() {
 int main () {
 	int size = 0;
 	std::cin >> size;
-	Student array[size];
+	Student *array = new Student[size];
 	
 	for(int i = 0; i < size; i++) {
 		std::cout << i+1 << ":\t";
 		array[i] = *readStudent();
 		std::cout << endl;
 	}
-	
 	std::cout << endl << "Studenci:" << endl;
 	for(int i = 0; i < size; i++)
 		array[i].printStudent();
