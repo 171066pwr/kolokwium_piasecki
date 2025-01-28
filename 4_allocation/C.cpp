@@ -13,10 +13,6 @@
 
 using namespace std;
 
-#define SIZE 10
-
-using namespace std;
-
 typedef char (*text)[SIZE];
 
 void printStudentArray(int *array, int size) {
