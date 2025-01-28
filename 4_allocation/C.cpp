@@ -28,7 +28,7 @@ void printStudentArray(int *array, int size) {
 text *createArray(int size) {
 	text *array = new text[size];
 	while(size > 0) {
-		array[--size] = (text)malloc(sizeof(char)*SIZE);	
+		array[--size] = (text)malloc(sizeof(char)*);	
 	}		
 	return array;
 }
