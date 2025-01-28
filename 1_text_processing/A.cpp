@@ -62,8 +62,6 @@ void zadAMemmove(char *array, int size) {
 int main() {
 	char tab[limit];
 	scan(tab, limit);
-
-	printf("%s\n", tab);
 	zadA(tab, limit);
 	printf("%s\n", tab);
 

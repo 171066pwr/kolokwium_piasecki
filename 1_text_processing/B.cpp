@@ -38,7 +38,6 @@ void zadB(char *array, int size) {
 int main() {
 	char tab[limit];
 	scan(tab, limit);
-	printf("%s\n", tab);
 	zadB(tab, limit);
 	printf("%s\n", tab);
 
