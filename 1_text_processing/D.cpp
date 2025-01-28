@@ -11,7 +11,7 @@ void scan(char *array, int size) {
 	fgets(array, size, stdin);
 }
 
-void removeAllSmart(char *array, char character) {
+void removeCharSmart(char *array, char character) {
 	int i = 0, j = 0;
 	while(array[i] != '\0')
 		if(array[i] == character)
@@ -22,7 +22,7 @@ void removeAllSmart(char *array, char character) {
 }
 
 //strcpy(destination, source) till \0
-void removeAll(char *array, char character) {
+void removeChar(char *array, char character) {
   int i=0;
   while(array[i]!='\0' )
     if(array[i] == character)
@@ -31,16 +31,12 @@ void removeAll(char *array, char character) {
       i++;
 }
 
-void zadD(char *array) {
-	removeAll(array, ' ');
-	//removeAllSmart(array, ' ');
-}
-
 int main() {
 	char tab[limit];
 	scan(tab, limit);
 	printf("%s\n", tab);
-	zadD(tab);
+	removeChar(tab, ' ');
+	//removeCharSmart(array, ' ');
 	printf("%s\n", tab);
 
 	system("pause");

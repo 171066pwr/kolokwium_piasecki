@@ -1,7 +1,6 @@
 //  c)	Napisz funkcjê formatuj¹c¹ tekst poprzez usuniêcie
 //    wszystkich pocz¹tkowych i koñcowych spacji
 //    z ³añcucha zadanego jako parametr wejœciowy tej funkcji.
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -38,15 +37,11 @@ void trimBegin(char *array, int size) {
 	shiftLeft(array, size, 0, counter);
 }
 
-void zadC(char *array, int size) {
-	trimBegin(array, size);
-	trimEnd(array, size);
-}
-
 int main() {
 	char tab[limit];
 	scan(tab, limit);
-	zadC(tab, limit);
+	trimBegin(tab, limit);
+	trimEnd(tab, limit);
 	printf("%s\n", tab);
 
 	system("pause");
