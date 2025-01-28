@@ -13,6 +13,10 @@
 
 using namespace std;
 
+#define SIZE 10
+
+using namespace std;
+
 typedef char (*text)[SIZE];
 
 void printStudentArray(int *array, int size) {
@@ -22,14 +26,18 @@ void printStudentArray(int *array, int size) {
 }
 
 text *createArray(int size) {
-	return new text[size];
+	text *array = new text[size];
+	while(size > 0) {
+		array[--size] = (text)malloc(sizeof(char)*SIZE);	
+	}		
+	return array;
 }
 
 void readTextArray(text *array, int size) {
-	std::cin.clear();
-	fflush(stdin);
 	for(int i = 0; i < size; i++) {
 		std::cout << i << ".\t";
+		std::cin.clear();
+		fflush(stdin);
 		fgets(*(array[i]), SIZE, stdin);	
 	}
 }
@@ -42,6 +50,9 @@ int main () {
 	
 	std::cout << endl << "Teksty:" << endl;
 	for(int i = 0; i < size; i++)
-		std::cout << *array[i] << endl;
+		std::cout << i << ".\t" << *array[i] << endl;
+	
+	for(int i = 0; i < size; i++)
+		delete array[i];
 	delete array;
 }
